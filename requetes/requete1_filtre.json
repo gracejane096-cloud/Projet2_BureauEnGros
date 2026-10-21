@@ -1,0 +1,19 @@
+
+{
+  "selector": {
+    "prix": {
+      "$gte": 500,
+      "$lte": 1500
+    },
+    "processeur": {
+      "$regex": "Intel Core i5"
+    }
+  },
+  "fields": [
+    "nom",
+    "modele",
+    "prix",
+    "processeur"
+  ],
+  "limit": 20
+}

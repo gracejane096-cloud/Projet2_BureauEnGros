@@ -1,0 +1,23 @@
+
+{
+  "selector": {
+    "prix": {
+      "$gte": 0
+    }
+  },
+  "fields": [
+    "nom",
+    "modele",
+    "prix"
+  ],
+  "sort": [
+    {
+      "prix": "asc"
+    }
+  ],
+  "limit": 10,
+  "use_index": [
+    "_design/978e563279faa8e6c1e60ec8bdda3bdb4446e2f6",
+    "index_prix"
+  ]
+}

@@ -1,0 +1,10 @@
+
+{
+  "_id": "_design/statistiques_produits",
+  "views": {
+    "produits_par_tranche_prix": {
+      "map": "function (doc) { if (doc.type === 'produit' && typeof doc.prix === 'number') { var tranche; if (doc.prix < 100) { tranche = 'Moins de 100 $'; } else if (doc.prix < 500) { tranche = '100 à 499,99 $'; } else if (doc.prix < 1000) { tranche = '500 à 999,99 $'; } else { tranche = '1000 $ et plus'; } emit(tranche, 1); } }",
+      "reduce": "_sum"
+    }
+  }
+}
