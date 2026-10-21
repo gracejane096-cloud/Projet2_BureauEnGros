@@ -1,0 +1,90 @@
+{
+  "_id": "ScrapBureauengros",
+  "startUrl": [
+    "https://www.bureauengros.com/collections/fr-ordinateurs-89"
+  ],
+  "selectors": [
+    {
+      "id": "pagination",
+      "paginationType": "auto",
+      "parentSelectors": [
+        "_root",
+        "pagination"
+      ],
+      "selector": ".ais-footer .ais-Pagination-item--page a",
+      "type": "SelectorPagination"
+    },
+    {
+      "id": "lien_Produits",
+      "linkType": "linkFromHref",
+      "multiple": true,
+      "parentSelectors": [
+        "_root",
+        "pagination"
+      ],
+      "selector": "[data-testid='product-grid-view'] a[data-testid='product-card-title']",
+      "type": "SelectorLink",
+      "version": 2
+    },
+    {
+      "id": "description_Produit",
+      "multipleType": "singleColumn",
+      "parentSelectors": [
+        "lien_Produits"
+      ],
+      "selector": ".d-none [itemprop='name'] span",
+      "type": "SelectorText",
+      "version": 2
+    },
+    {
+      "id": "modele_Produit",
+      "multipleType": "singleColumn",
+      "parentSelectors": [
+        "lien_Produits"
+      ],
+      "selector": ".d-none span.ps-4",
+      "type": "SelectorText",
+      "version": 2
+    },
+    {
+      "id": "capacite_stockage",
+      "multipleType": "singleColumn",
+      "parentSelectors": [
+        "lien_Produits"
+      ],
+      "selector": "th:contains('Capacité de stockage de l’ordinateur') + td",
+      "type": "SelectorText",
+      "version": 2
+    },
+    {
+      "id": "type_Processeur",
+      "multipleType": "singleColumn",
+      "parentSelectors": [
+        "lien_Produits"
+      ],
+      "selector": "th:contains('Type de processeur') + td",
+      "type": "SelectorText",
+      "version": 2
+    },
+    {
+      "id": "image",
+      "multipleType": "singleColumn",
+      "parentSelectors": [
+        "lien_Produits"
+      ],
+      "selector": ".col-12 > div > div.generic-carousel .react-image-magnify > img",
+      "type": "SelectorImage",
+      "version": 2
+    },
+    {
+      "id": "prix",
+      "multipleType": "singleColumn",
+      "parentSelectors": [
+        "lien_Produits"
+      ],
+      "selector": ".d-none span[data-testid='discount-final-price']",
+      "type": "SelectorText",
+      "version": 2
+    }
+  ]
+}
